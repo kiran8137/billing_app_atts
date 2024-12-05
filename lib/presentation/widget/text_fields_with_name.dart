@@ -12,7 +12,7 @@ class TextFieldWithName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 70,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -1,11 +1,14 @@
 import 'package:billing_app_atts/configs/bloc_providers.dart';
 import 'package:billing_app_atts/data/respository/auth_repo_implement.dart';
+import 'package:billing_app_atts/data/respository/bill_repo_implement.dart';
 import 'package:billing_app_atts/data/respository/product_repo_implement.dart';
 import 'package:billing_app_atts/firebase_options.dart';
 import 'package:billing_app_atts/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:billing_app_atts/presentation/bloc/bill_bloc/bill_bloc.dart';
 import 'package:billing_app_atts/presentation/bloc/product_bloc/product_bloc.dart';
 import 'package:billing_app_atts/presentation/provider/cart_controller.dart';
 import 'package:billing_app_atts/presentation/screens/auth_screens/sign_in_screen.dart';
+import 'package:billing_app_atts/presentation/screens/bill_screen/bill_screen.dart';
 import 'package:billing_app_atts/presentation/screens/cart_screen/cart_screen.dart';
 import 'package:billing_app_atts/presentation/screens/home_screen/home_screen.dart';
 import 'package:billing_app_atts/configs/theme.dart';
@@ -34,6 +37,9 @@ class MyApp extends StatelessWidget {
     BlocProvider(
     create: (contex)=> ProductBloc(productsRepository: ProductRepoImplement())..add(GetProductsEvent())
     ),
+    BlocProvider(create:
+     (context)=> BillBloc(billRepository: BillRepoImplement())
+     )
       ],
       child: ChangeNotifierProvider(
         create: (context) => CartController(),
@@ -42,7 +48,7 @@ class MyApp extends StatelessWidget {
           title: 'billing app',
            theme: lightTheme,
            darkTheme: darkTheme,
-          home:SignInScreen(),
+          home: SignInScreen()
         ),
       ),
     );

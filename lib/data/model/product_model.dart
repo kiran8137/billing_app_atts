@@ -16,7 +16,7 @@ class ProductModel extends ProductEntity {
     return ProductModel(
         productId: json['productId'],
         productName: json['productName'],
-        productprice: json['productPrice'],
+        productprice:  json['productPrice'],
         discount: json['discount'] ?? "0"
         );
   }

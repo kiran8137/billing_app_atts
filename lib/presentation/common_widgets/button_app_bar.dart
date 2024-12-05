@@ -13,11 +13,13 @@ class ButtonAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: onTap,
       child: Container(
         width: 100,
-        height: 35,
+        height: width < 400 ? 30 : 35,
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(5)

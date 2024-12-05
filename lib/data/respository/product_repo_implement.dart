@@ -18,7 +18,7 @@ class ProductRepoImplement extends ProductsRepository{
       ProductModel product = ProductModel(
         productId: collectionRef.id,
         productName: productName, 
-        productprice: productPrice, 
+        productprice: double.parse(productPrice).toString(), 
         discount: discount ?? "0"
         );
 
